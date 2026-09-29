@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Vybe Date — meet people at the events you're already going to",
   description:
-    "Vybe Date matches you with people going to the same events as you. 18+ only. Currently in early access — join the WhatsApp community to be first in.",
+    "Vybe Date matches you with people going to the same events as you. 18+ only. Currently in early access join the WhatsApp community to be first in.",
   // No manual `icons` entry needed — favicon.ico, icon.svg and apple-icon.png
   // in this folder are Next.js's own file convention and get wired up automatically.
   openGraph: {

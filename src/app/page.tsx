@@ -6,9 +6,9 @@ import { FeatureCard } from '@/components/FeatureCard';
 import { CalendarIcon, ChatIcon, ShieldIcon, SparkIcon } from '@/components/icons';
 
 const STEPS = [
-  { n: '01', title: 'Pick an event', body: 'Browse real events near you — gigs, rooftop nights, meetups, pop-ups.' },
+  { n: '01', title: 'Pick an event', body: 'Browse real events near you gigs, rooftop nights, meetups, pop-ups.' },
   { n: '02', title: 'Match with people going', body: 'See who else is going, and match with the ones you vibe with.' },
-  { n: '03', title: 'Chat once it clicks', body: "It's mutual or nothing — no cold DMs, no chat requests." },
+  { n: '03', title: 'Chat once it clicks', body: "It's mutual or nothing no cold DMs, no chat requests." },
 ];
 
 export default function Home() {
@@ -24,7 +24,7 @@ export default function Home() {
               <div className="flex flex-wrap items-center justify-center gap-2 lg:justify-start">
                 <span className="inline-flex items-center gap-2 rounded-full border border-[var(--vybe-hairline)] bg-[var(--vybe-surface-2)] px-3.5 py-1.5 text-[12px] font-semibold text-[var(--vybe-pink)]">
                   <span className="h-1.5 w-1.5 rounded-full bg-[var(--vybe-pink)]" />
-                  Early access — building in public
+                  Early access building in public
                 </span>
                 <span className="inline-flex items-center rounded-full border border-[var(--vybe-hairline)] bg-[var(--vybe-surface-2)] px-3.5 py-1.5 text-[12px] font-semibold text-[var(--vybe-text-muted)]">
                   18+ only
@@ -36,15 +36,15 @@ export default function Home() {
               </h1>
 
               <p className="mx-auto mt-5 max-w-md text-[16px] leading-relaxed text-[var(--vybe-text-muted)] lg:mx-0">
-                Vybe Date matches you with people going to the same events as you — gigs, rooftop
-                nights, meetups — so there&rsquo;s already something to talk about.
+                Vybe Date matches you with people going to the same events as you gigs, rooftop
+                nights, meetups so there&rsquo;s already something to talk about.
               </p>
 
               <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
                 <WhatsAppButton />
               </div>
               <p className="mt-3.5 text-[12.5px] text-[var(--vybe-text-muted)]">
-                We&rsquo;re just getting started — join the WhatsApp group to hear the moment we open up.
+                We&rsquo;re just getting started join the WhatsApp group to hear the moment we open up.
               </p>
             </div>
 
@@ -116,7 +116,7 @@ export default function Home() {
               </h2>
               <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-[var(--vybe-text-muted)] lg:mx-0">
                 Pick an event, and you&rsquo;ll only see people who are going to that same one. No
-                random strangers halfway across the city — everyone in your stack is someone
+                random strangers halfway across the city everyone in your stack is someone
                 you could actually run into.
               </p>
             </div>
@@ -134,7 +134,7 @@ export default function Home() {
                 A reason to say hi, built in
               </h2>
               <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-[var(--vybe-text-muted)] lg:mx-0">
-                Every match already knows what event brought you together — so the first message
+                Every match already knows what event brought you together so the first message
                 writes itself. No &ldquo;hey&rdquo;, no awkward silence.
               </p>
             </div>

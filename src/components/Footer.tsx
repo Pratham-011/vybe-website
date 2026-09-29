@@ -12,7 +12,7 @@ export const Footer = () => (
             <span className="font-[var(--font-display)] text-base font-extrabold">vybe.date</span>
           </div>
           <p className="mt-3 text-sm leading-relaxed text-[var(--vybe-text-muted)]">
-            Meet people at the events you&rsquo;re already going to. Currently in early access —
+            Meet people at the events you&rsquo;re already going to. Currently in early access
             join the WhatsApp community to be first in when we open up.
           </p>
         </div>
