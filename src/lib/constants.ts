@@ -4,7 +4,7 @@ export const CONTACT_EMAIL = 'vybe.date@gmail.com';
 
 /** The one call-to-action on the whole site, in place of app store buttons —
  *  we're pre-launch, so this is where "download the app" would normally go. */
-export const WHATSAPP_GROUP_URL = 'https://chat.whatsapp.com/J7Apu2SKYYb3vbLvQVJ1sg';
+export const WHATSAPP_GROUP_URL = 'https://chat.whatsapp.com/F2hfH5cL94QHA4wk5ImDwF';
 
 export const PRIVACY_POLICY_PATH = '/legal/privacy';
 export const TERMS_PATH = '/legal/terms';
