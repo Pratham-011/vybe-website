@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# vybe-website
 
-## Getting Started
+The marketing site for Vybe Date — Next.js (App Router) + Tailwind CSS v4, styled with the same
+"Luminescent Void" brand tokens as the app (`nightfall-navigator`).
 
-First, run the development server:
+Since there's no app-store listing yet, the one call-to-action everywhere on the site is
+**"Join our WhatsApp community"**, instead of Apple/Play Store badges. No user/event counts are
+shown anywhere — we're pre-launch.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Structure
+
+```
+src/
+  app/
+    page.tsx                 Home page
+    layout.tsx                Root layout, fonts, metadata
+    globals.css                Brand tokens + legal-page typography
+    legal/
+      privacy/page.tsx          Privacy Policy
+      terms/page.tsx             Terms & Conditions
+      account-deletion/page.tsx  Account deletion instructions
+  components/
+    Header.tsx, Footer.tsx, WhatsAppButton.tsx, LegalShell.tsx
+    PhoneFrame.tsx              A real iPhone-style frame (Dynamic Island, side
+                                 buttons) wrapping an actual screenshot — pass it
+                                 a `src` from public/screens/
+  lib/
+    constants.ts               WhatsApp link, contact email, legal doc versions
+public/
+  screens/                     Real screenshots of the actual app (Discover,
+    discover.png, matches.png,  Matches, Chat) at iPhone size, taken from a
+    chat.png                    seeded isolated test run — not illustrations.
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Develop
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run build && npm run start   # production build
+npm run lint
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Updating things later
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **WhatsApp link / contact email** — `src/lib/constants.ts`.
+- **Legal pages** — kept in sync with the app's own legal pages at
+  `nightfall-navigator/src/pages/legal/`. If you change one, change the other, and bump the
+  version/date constants in both places.
+- **Phone mockups** — real screenshots (`public/screens/*.png`) of the actual app, taken from a
+  throwaway seeded scenario (gradient placeholder photos, since real users' photos can't be used
+  here) — not hand-drawn illustrations. To refresh them after a UI change, reseed and reshoot at a
+  390×844 viewport, deviceScaleFactor 3, and drop the new PNGs in `public/screens/`.
+- **Re-introducing stats** ("X users", "X matches") — once you have real numbers worth showing,
+  add them back into the hero/CTA copy in `src/app/page.tsx`.

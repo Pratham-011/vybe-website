@@ -1,26 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Same "Luminescent Void" palette as the Vybe Date app itself
+     (nightfall-navigator/src/index.css) — this site is its front door. */
+  --vybe-bg: #0e0e0e;
+  --vybe-surface: #171717;
+  --vybe-surface-2: #1c1c1c;
+  --vybe-surface-3: #222222;
+  --vybe-hairline: rgba(255, 255, 255, 0.09);
+  --vybe-text: #f3f4fa;
+  --vybe-text-muted: #a9acbf;
+  --vybe-pink: #ff8aa9;
+  --vybe-pink-solid: #ff6482;
+  --vybe-pink-soft: rgba(255, 138, 169, 0.15);
+  --vybe-cyan: #2ee6ff;
+  --vybe-cyan-soft: rgba(109, 255, 255, 0.15);
+  --vybe-purple: #bf81ff;
+  --vybe-purple-soft: rgba(191, 129, 255, 0.12);
+  --vybe-green: #3ddc97;
+  --vybe-radius-card: 20px;
+  --vybe-radius-control: 14px;
+  --vybe-radius-pill: 999px;
+
+  --background: var(--vybe-bg);
+  --foreground: var(--vybe-text);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Epilogue', 'Inter', system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--vybe-bg);
+  background-image:
+    radial-gradient(60% 45% at 82% -8%, rgba(255, 100, 130, 0.16) 0%, transparent 60%),
+    radial-gradient(50% 40% at 8% 8%, rgba(191, 129, 255, 0.12) 0%, transparent 60%);
+  background-repeat: no-repeat;
+  color: var(--vybe-text);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--vybe-pink-soft);
+  color: var(--vybe-text);
+}
+
+a {
+  color: inherit;
+}
+
+/* Legal pages — plain, readable typography, no Tailwind prose plugin needed. */
+.legal-content h1 {
+  font-family: 'Epilogue', 'Inter', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.legal-content .legal-meta {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--vybe-text-muted);
+}
+
+.legal-content .legal-intro {
+  margin-top: 20px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--vybe-text-muted);
+}
+
+.legal-content .legal-toc {
+  margin: 28px 0;
+  padding: 18px 20px;
+  border-radius: var(--vybe-radius-control);
+  background: var(--vybe-surface-2);
+  border: 1px solid var(--vybe-hairline);
+}
+
+.legal-content .legal-toc h2 {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--vybe-text-muted);
+  margin-bottom: 10px;
+}
+
+.legal-content .legal-toc ol {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 6px 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.legal-content .legal-toc a {
+  font-size: 13.5px;
+  color: var(--vybe-pink);
+  text-decoration: none;
+}
+
+.legal-content .legal-toc a:hover {
+  text-decoration: underline;
+}
+
+.legal-content .legal-section {
+  margin-top: 36px;
+  scroll-margin-top: 90px;
+}
+
+.legal-content .legal-section h2 {
+  font-family: 'Epilogue', 'Inter', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.legal-content .legal-section h3 {
+  font-size: 14.5px;
+  font-weight: 700;
+  margin: 16px 0 6px;
+  color: var(--vybe-text);
+}
+
+.legal-content .legal-section p {
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: var(--vybe-text-muted);
+  margin-bottom: 10px;
+}
+
+.legal-content .legal-section ul {
+  margin: 8px 0 10px;
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.legal-content .legal-section li {
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: var(--vybe-text-muted);
+  margin-bottom: 6px;
+}
+
+.legal-content .legal-section a {
+  color: var(--vybe-pink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.legal-content .legal-footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--vybe-hairline);
+  font-size: 13.5px;
+  color: var(--vybe-text-muted);
+}
+
+.legal-content .legal-footer a {
+  color: var(--vybe-pink);
+  text-decoration: underline;
 }
