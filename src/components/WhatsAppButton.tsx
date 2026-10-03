@@ -1,4 +1,7 @@
+'use client';
+
 import { WHATSAPP_GROUP_URL } from '@/lib/constants';
+import { trackJoinCommunity } from '@/lib/metaEvents';
 
 const WhatsAppIcon = () => (
   <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
@@ -7,18 +10,28 @@ const WhatsAppIcon = () => (
   </svg>
 );
 
+/** Secondary, lower-commitment option (the real conversion is now
+ *  GetStartedButton) — set `secondary` for the de-emphasized ghost style
+ *  used wherever it sits alongside the primary CTA. */
 export const WhatsAppButton = ({
   className = '',
+  secondary = false,
   children = 'Join our WhatsApp community',
 }: {
   className?: string;
+  secondary?: boolean;
   children?: React.ReactNode;
 }) => (
   <a
     href={WHATSAPP_GROUP_URL}
     target="_blank"
     rel="noopener noreferrer"
-    className={`inline-flex items-center gap-2 rounded-full bg-[var(--vybe-pink-solid)] px-6 py-3.5 text-[15px] font-bold text-white shadow-[0_10px_30px_rgba(255,100,130,0.35)] transition hover:brightness-110 active:scale-[0.98] ${className}`}
+    onClick={trackJoinCommunity}
+    className={
+      secondary
+        ? `inline-flex items-center gap-2 rounded-full border border-[var(--vybe-hairline)] px-5 py-3 text-[14px] font-semibold text-[var(--vybe-text-muted)] transition hover:border-[var(--vybe-pink-soft)] hover:text-[var(--vybe-text)] ${className}`
+        : `inline-flex items-center gap-2 rounded-full bg-[var(--vybe-pink-solid)] px-6 py-3.5 text-[15px] font-bold text-white shadow-[0_10px_30px_rgba(255,100,130,0.35)] transition hover:brightness-110 active:scale-[0.98] ${className}`
+    }
   >
     <WhatsAppIcon />
     {children}

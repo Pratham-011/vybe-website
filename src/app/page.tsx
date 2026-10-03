@@ -1,14 +1,16 @@
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
+import { GetStartedButton } from '@/components/GetStartedButton';
+import { ScrollToCommunityLink } from '@/components/ScrollToCommunityLink';
 import { PhoneFrame } from '@/components/PhoneFrame';
 import { FeatureCard } from '@/components/FeatureCard';
 import { CalendarIcon, ChatIcon, ShieldIcon, SparkIcon } from '@/components/icons';
 
 const STEPS = [
-  { n: '01', title: 'Pick an event', body: 'Browse real events near you gigs, rooftop nights, meetups, pop-ups.' },
+  { n: '01', title: 'Pick an event', body: 'Browse real events near you — gigs, rooftop nights, meetups, pop-ups.' },
   { n: '02', title: 'Match with people going', body: 'See who else is going, and match with the ones you vibe with.' },
-  { n: '03', title: 'Chat once it clicks', body: "It's mutual or nothing no cold DMs, no chat requests." },
+  { n: '03', title: 'Chat once it clicks', body: "It's mutual or nothing — no cold DMs, no chat requests." },
 ];
 
 export default function Home() {
@@ -23,8 +25,8 @@ export default function Home() {
             <div className="text-center lg:text-left">
               <div className="flex flex-wrap items-center justify-center gap-2 lg:justify-start">
                 <span className="inline-flex items-center gap-2 rounded-full border border-[var(--vybe-hairline)] bg-[var(--vybe-surface-2)] px-3.5 py-1.5 text-[12px] font-semibold text-[var(--vybe-pink)]">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--vybe-pink)]" />
-                  Early access building in public
+                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--vybe-green)]" />
+                  Now live
                 </span>
                 <span className="inline-flex items-center rounded-full border border-[var(--vybe-hairline)] bg-[var(--vybe-surface-2)] px-3.5 py-1.5 text-[12px] font-semibold text-[var(--vybe-text-muted)]">
                   18+ only
@@ -36,15 +38,16 @@ export default function Home() {
               </h1>
 
               <p className="mx-auto mt-5 max-w-md text-[16px] leading-relaxed text-[var(--vybe-text-muted)] lg:mx-0">
-                Vybe Date matches you with people going to the same events as you gigs, rooftop
-                nights, meetups so there&rsquo;s already something to talk about.
+                Vybe Date matches you with people going to the same events as you — gigs, rooftop
+                nights, meetups — so there&rsquo;s already something to talk about.
               </p>
 
               <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
-                <WhatsAppButton />
+                <GetStartedButton />
               </div>
               <p className="mt-3.5 text-[12.5px] text-[var(--vybe-text-muted)]">
-                We&rsquo;re just getting started join the WhatsApp group to hear the moment we open up.
+                Not ready yet? <ScrollToCommunityLink>Join our WhatsApp community</ScrollToCommunityLink>{' '}
+                for updates instead.
               </p>
             </div>
 
@@ -116,7 +119,7 @@ export default function Home() {
               </h2>
               <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-[var(--vybe-text-muted)] lg:mx-0">
                 Pick an event, and you&rsquo;ll only see people who are going to that same one. No
-                random strangers halfway across the city everyone in your stack is someone
+                random strangers halfway across the city — everyone in your stack is someone
                 you could actually run into.
               </p>
             </div>
@@ -134,7 +137,7 @@ export default function Home() {
                 A reason to say hi, built in
               </h2>
               <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-[var(--vybe-text-muted)] lg:mx-0">
-                Every match already knows what event brought you together so the first message
+                Every match already knows what event brought you together — so the first message
                 writes itself. No &ldquo;hey&rdquo;, no awkward silence.
               </p>
             </div>
@@ -142,7 +145,7 @@ export default function Home() {
         </section>
 
         {/* ── Bottom CTA ─────────────────────────────────────────── */}
-        <section className="mx-auto max-w-6xl px-5 py-24 sm:px-8">
+        <section id="community" className="mx-auto max-w-6xl px-5 py-24 sm:px-8 scroll-mt-24">
           <div className="relative overflow-hidden rounded-[28px] border border-[var(--vybe-hairline)] bg-gradient-to-br from-[#241522] via-[#171717] to-[#191029] px-6 py-16 text-center sm:px-14">
             <div
               aria-hidden
@@ -153,14 +156,22 @@ export default function Home() {
               className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-[var(--vybe-purple)] opacity-20 blur-[100px]"
             />
             <h2 className="relative font-[var(--font-display)] text-[30px] font-extrabold sm:text-[40px]">
-              Be one of the first in
+              Ready to vybe?
             </h2>
             <p className="relative mx-auto mt-3 max-w-md text-[15px] text-[var(--vybe-text-muted)]">
-              We&rsquo;re rolling out access in small batches. Join the WhatsApp community and
-              you&rsquo;ll be the first to know the moment it opens up.
+              Create your free profile and start matching with people going to the same events as
+              you — today, not someday.
             </p>
             <div className="relative mt-8 flex justify-center">
-              <WhatsAppButton />
+              <GetStartedButton />
+            </div>
+            <div className="relative mt-5 flex items-center justify-center gap-3 text-[13px] text-[var(--vybe-text-muted)]">
+              <span className="h-px w-10 bg-[var(--vybe-hairline)]" />
+              not ready yet?
+              <span className="h-px w-10 bg-[var(--vybe-hairline)]" />
+            </div>
+            <div className="relative mt-4 flex justify-center">
+              <WhatsAppButton secondary>Join our community for updates</WhatsAppButton>
             </div>
           </div>
         </section>

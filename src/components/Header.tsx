@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { WhatsAppButton } from './WhatsAppButton';
+import { GetStartedButton } from './GetStartedButton';
 
 export const Header = () => (
   <header className="sticky top-0 z-40 border-b border-[var(--vybe-hairline)] bg-[var(--vybe-bg)]/80 backdrop-blur-md">
@@ -12,7 +12,7 @@ export const Header = () => (
         </span>
       </Link>
 
-      <WhatsAppButton className="!px-4 !py-2.5 !text-[13px]">Join our WhatsApp</WhatsAppButton>
+      <GetStartedButton className="!px-4 !py-2.5 !text-[13px]" />
     </div>
   </header>
 );
